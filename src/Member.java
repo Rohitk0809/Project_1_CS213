@@ -36,7 +36,15 @@ public class Member implements Comparable<Member>{
      */
     @Override
     public boolean equals(Object obj) {
-        return this.toString().equals(obj.toString());
+
+        Member member = (Member) obj;
+        if ((this.fname.equalsIgnoreCase(member.fname)) && (this.lname.equalsIgnoreCase(member.lname)) && (this.dob.compareTo(member.dob)==0))
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     /**
      This method compares two members, sorted by last name, first name, then date of birth
